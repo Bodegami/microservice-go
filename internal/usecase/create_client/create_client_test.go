@@ -26,8 +26,8 @@ func TestCreateClientUseCase_Execute(t *testing.T) {
 	m := &ClientGatewayMock{}
 	m.On("Save", mock.Anything).Return(nil)
 	uc := NewCreateClientUseCase(m)
-	name := "John Doe"
-	email := "j0j@test.com"
+	var name = "John Doe"
+	var email = "j0j@test.com"
 
 	output, err := uc.Execute(CreateClientInputDTO{
 		Name:  name,
